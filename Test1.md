@@ -1,3 +1,4 @@
+```c
 #include <iostream>
 
 int main() {
@@ -20,3 +21,4 @@ int main() {
     }
   printf("%d", res);
 }
+```
