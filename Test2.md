@@ -14,7 +14,7 @@ int main() {
       scanf("%d", &money[i]);
 
   temp = money[0];
-  total = temp + a[1];
+  total = temp * a[1];
 
   for(int i = 1; i < n; i++)
     {
