@@ -2,28 +2,31 @@
 #include <iostream>
 
 int a[100000];
-int b[100000];
+int money[100000];
 int main() {
-  int dis, money, n, temp;
+  int n, total, temp;
 
   scanf("%d" ,&n);
 
-  for(int i = 0; i < n-1; i++)
+  for(int i = 1; i < n; i++)
     scanf("%d", &a[i]);
   for(int i = 0; i < n; i++)
-    {
-      scanf("%d", &b[i]);
-      dis += b[i];
-    }  
+      scanf("%d", &money[i]);
 
-  money = a[0] * dis;
-  for(int i = 0; i < n-1; i++)
+  temp = money[0];
+  total = temp + a[1];
+
+  for(int i = 1; i < n; i++)
     {
-     temp += a[i] * b[i];
+      if(temp < money[i])
+        total += temp + money[i-1];
+      else
+      {
+        temp = money[i];
+        total += temp + money[i+1];
+      }
     }
-  temp += a[n];
-  if(temp < money)
-    money = temp;
+  printf("%d", total);
     
 
   
