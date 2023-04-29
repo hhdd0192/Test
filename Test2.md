@@ -19,11 +19,11 @@ int main() {
   for(int i = 1; i < n; i++)
     {
       if(temp < money[i])
-        total += temp + money[i-1];
+        total += temp * money[i-1];
       else
       {
         temp = money[i];
-        total += temp + money[i+1];
+        total += temp * money[i+1];
       }
     }
   printf("%d", total);
